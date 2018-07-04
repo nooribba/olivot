@@ -1,8 +1,6 @@
 target/
 .settings/
 .metadata
-.project
-.classpath
 *.tmp
 *.7z
 *.dmg
