@@ -1,11 +1,11 @@
 # olivot:올리봇
 ## 2018 OYIT OT&amp;OT Project
 
-### 카카오톡 플러스친구 적용
+### 카카오톡 플러스친구 적용 중
 
     https://center-pf.kakao.com/_rNxbtC
        
-### 올리브영 온라인몰 내 적용
+### 올리브영 온라인몰 내 적용 계획
 
     http://oliveyoung.co.kr
 
