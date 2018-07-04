@@ -23,37 +23,37 @@ import java.io.File;
 
 public class ModelBuildTest {
 
-	//	public static void main(String[] args) {
+//	public static void main(String[] args) {
 //		modelSave(false);
 //		modelSave(true);
 //		modelLoad();
 //	}
-//
-//	@SuppressWarnings("deprecation")
-//	private static void modelLoad() {
-//		ModelBuilder builder = new ModelBuilder();
-//		builder.load("models_light");
-//		builder.load("models_full");
-//		System.out.println("LOAD COMPLETE");
-//	}
-//
-//	private static void modelSave(boolean includeWikiTitle) {
-//		ModelBuilder builder = new ModelBuilder();
-//		if(includeWikiTitle) {
-//			builder.setExternalDic("user_data" + File.separator + "wiki.titles");
-//		}
-//		builder.buildPath("corpus_build");
-//
-//		String modelPath = "models";
-//		if(includeWikiTitle){
-//			modelPath += "_full";
-//			System.out.println("_full");
-//		}else{
-//			modelPath += "_light";
-//			System.out.println("_light");
-//		}
-//		builder.save(modelPath);
-//		System.out.println("SAVE COMPLETE");
-//	}
+
+	@SuppressWarnings("deprecation")
+	private static void modelLoad() {
+		ModelBuilder builder = new ModelBuilder();
+		builder.load("models_light");
+		builder.load("models_full");
+		System.out.println("LOAD COMPLETE");
+	}
+
+	private static void modelSave(boolean includeWikiTitle) {
+		ModelBuilder builder = new ModelBuilder();
+		if(includeWikiTitle) {
+			builder.setExternalDic("user_data" + File.separator + "wiki.titles");
+		}
+		builder.buildPath("corpus_build");
+
+		String modelPath = "models";
+		if(includeWikiTitle){
+			modelPath += "_full";
+			System.out.println("_full");
+		}else{
+			modelPath += "_light";
+			System.out.println("_light");
+		}
+		builder.save(modelPath);
+		System.out.println("SAVE COMPLETE");
+	}
 
 }

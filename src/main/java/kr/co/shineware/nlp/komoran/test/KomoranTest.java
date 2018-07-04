@@ -45,7 +45,7 @@ public class KomoranTest {
 
     @Before
     public void init() {
-        this.komoran = new Komoran(DEFAULT_MODEL.LIGHT);
+    	this.komoran = new Komoran(DEFAULT_MODEL.LIGHT);
     }
 
     @Test
@@ -205,35 +205,29 @@ public class KomoranTest {
         System.out.println(this.komoran.analyze("밀리언 달러 베이비랑").getTokenList());
         System.out.println(this.komoran.analyze("밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?").getTokenList());
     }
-	
-	
 
-	public static void main(String[] args) throws Exception {
-
-		Komoran komoran = new Komoran("WEB-INF/models_light");
-		komoran.setFWDic("WEB-INF/user_data/fwd.user");
-		komoran.setUserDic("WEB-INF/user_data/dic.user");
-
-		//String input = "밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?";
-		String input = "올리브영에선 뭐가 제일 핫해?";
-		KomoranResult analyzeResultList = komoran.analyze(input);
-		List<Token> tokenList = analyzeResultList.getTokenList();
-
-		//print each tokens by getTokenList()
-		System.out.println("==========print 'getTokenList()'==========");
-		for (Token token : tokenList) {
-			System.out.println(token);
-			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
-			System.out.println();
-		}
-		//print nouns
-		System.out.println("==========print 'getNouns()'==========");
-		System.out.println(analyzeResultList.getNouns());
-		System.out.println();
-		System.out.println("==========print 'getPlainText()'==========");
-		System.out.println(analyzeResultList.getPlainText());
-		System.out.println();
-		System.out.println("==========print 'getList()'==========");
-		System.out.println(analyzeResultList.getList());
-	}
+//	public static void main(String[] args) throws Exception {
+//		Komoran komoran = new Komoran("WEB-INF/models_light");
+//		komoran.setFWDic("WEB-INF/user_data/fwd.user");
+//		komoran.setUserDic("WEB-INF/user_data/dic.user");
+//
+//		String input = "올리브영에선 뭐가 제일 핫해?";
+//		KomoranResult analyzeResultList = komoran.analyze(input);
+//		List<Token> tokenList = analyzeResultList.getTokenList();
+//
+//		System.out.println("==========print 'getTokenList()'==========");
+//		for (Token token : tokenList) {
+//			System.out.println(token);
+//			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
+//			System.out.println();
+//		}
+//		System.out.println("==========print 'getNouns()'==========");
+//		System.out.println(analyzeResultList.getNouns());
+//		System.out.println();
+//		System.out.println("==========print 'getPlainText()'==========");
+//		System.out.println(analyzeResultList.getPlainText());
+//		System.out.println();
+//		System.out.println("==========print 'getList()'==========");
+//		System.out.println(analyzeResultList.getList());
+//	}
 }
