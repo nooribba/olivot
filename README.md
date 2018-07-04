@@ -1,5 +1,5 @@
 # olivot:올리봇
-## 2018 OYIT OT&amp;OT Project (olivot : ai/chatbot)
+## 2018 OYIT OT&amp;OT Project
 
 ### 카카오톡 플러스친구 적용
 
