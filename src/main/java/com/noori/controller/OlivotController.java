@@ -54,9 +54,9 @@ public class OlivotController {
         } else if(content.contains("사랑")){
         	forJsonObj.put("text","나도 너무너무 사랑해");
         } else if(content.contains("잘자")){
-        	forJsonObj.put("text","꿈 속에서도 너를 볼꺼야");
+        	forJsonObj.put("text","굿밤!");
         } else if(content.contains("졸려")){
-        	forJsonObj.put("text","졸리면 언능 세수하러 가용!");
+        	forJsonObj.put("text","졸리면 언능 세수하러 가요!");
         } else if(content.contains("시간")||content.contains("몇시")||content.contains("몇 시")){
         	forJsonObj.put("text","몹시 광분");
         }else if((content.contains("너")||content.contains("넌"))&&content.contains("누구")){
