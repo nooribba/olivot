@@ -2,6 +2,7 @@ target/
 user_data/
 models_full/
 models_light/
+result/
 .settings/
 .metadata
 *.tmp

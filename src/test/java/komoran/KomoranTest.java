@@ -1,47 +1,26 @@
+package komoran;
 /*******************************************************************************
- * KOMORAN 3.0 - Korean Morphology Analyzer
- *
- * Copyright 2015 Shineware http://www.shineware.co.kr
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *  
- * 	http://www.apache.org/licenses/LICENSE-2.0
- * 	
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * olivot komoran test class
  *******************************************************************************/
-package com.noori.komoran.test;
-
-import com.noori.common.OlivotUtil;
-import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
-import kr.co.shineware.nlp.komoran.core.Komoran;
-import kr.co.shineware.nlp.komoran.model.KomoranResult;
-import kr.co.shineware.nlp.komoran.model.Token;
-import kr.co.shineware.nlp.komoran.parser.KoreanUnitParser;
-import kr.co.shineware.nlp.komoran.util.KomoranCallable;
-
-import kr.co.shineware.util.common.file.FileUtil;
-import kr.co.shineware.util.common.model.Pair;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
-
+import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
+import kr.co.shineware.nlp.komoran.core.Komoran;
+import kr.co.shineware.nlp.komoran.model.KomoranResult;
+import kr.co.shineware.nlp.komoran.model.Token;
+import kr.co.shineware.nlp.komoran.parser.KoreanUnitParser;
+import kr.co.shineware.nlp.komoran.util.KomoranCallable;
+import kr.co.shineware.util.common.file.FileUtil;
+import kr.co.shineware.util.common.model.Pair;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -58,24 +37,23 @@ public class KomoranTest {
     	this.komoran = new Komoran(DEFAULT_MODEL.LIGHT);
     	
     	if(osName == null){
-        	osName = OlivotUtil.getOsName();
+        	osName = System.getProperty("os.name").toLowerCase();
 			System.out.println("##### osName:"+osName);
-       }
-       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
-    	   if(osName.contains("window")){
+        }
+        if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+    	    if(osName.contains("window")){
     		   userDicPath = "user_data"+File.separator;
 			   modelsFullPath = "models_full";
 			   modelsLightPath = "models_light";
-    	   }else{
+    	    }else{
     		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
     		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
     		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
-    	   }
-       }
-       
+    	    }
+        }
     }
 
-    @Test
+    //@Test
     public void notAnalyzeCombineTest() {
     	//String input = "밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?";
     	String input = "올리브영에선 뭐가 제일 핫해?";
@@ -91,11 +69,11 @@ public class KomoranTest {
 
     }
 
-    @Test
+    //@Test
     public void singleThreadSpeedTest() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("WEB-INF/analyze_result.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("result/analyze_result.txt"));
 
-        List<String> lines = FileUtil.load2List("WEB-INF/user_data/wiki.titles");
+        List<String> lines = FileUtil.load2List(userDicPath+"wiki.titles");
         List<KomoranResult> komoranList = new ArrayList<>();
 
         long begin = System.currentTimeMillis();
@@ -127,29 +105,30 @@ public class KomoranTest {
 
         bw.close();
 
-        System.out.println("Elapsed time : " + (end - begin));
+        System.out.println("Elapsed time : " + (end - begin) + "(singleThreadSpeedTest)");
     }
 
-    @Test
+    //@Test
     public void executorServiceTest() {
 
         long begin = System.currentTimeMillis();
-        this.komoran.analyzeTextFile(userDicPath+"wiki.titles", "WEB-INF/analyze_result.txt", 2);
+        this.komoran.analyzeTextFile(userDicPath+"wiki.titles", "result/analyze_result.txt", 2);
         long end = System.currentTimeMillis();
 
-        System.out.println("Elapsed time : " + (end - begin));
+        System.out.println("Elapsed time : " + (end - begin) + "(executorServiceTest)");
     }
 
-    @Test
+    //@Test
     public void multiThreadSpeedTest() throws ExecutionException, InterruptedException, IOException {
-
+    	long begin = 0L;
+    	long end = 0L;
         for (int i = 0; i < 10; i++) {
 
-            BufferedWriter bw = new BufferedWriter(new FileWriter("WEB-INF/analyze_result.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("result/analyze_result.txt"));
 
             List<String> lines = FileUtil.load2List(userDicPath+"wiki.titles");
 
-            long begin = System.currentTimeMillis();
+            begin = System.currentTimeMillis();
 
             List<Future<KomoranResult>> komoranList = new ArrayList<>();
             ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(8);
@@ -167,15 +146,15 @@ public class KomoranTest {
             }
 
 
-            long end = System.currentTimeMillis();
+            end = System.currentTimeMillis();
 
             bw.close();
             executor.shutdown();
-            System.out.println("Elapsed time : " + (end - begin));
         }
+        System.out.println("Elapsed time : " + (end - begin) + "(multiThreadSpeedTest)");
     }
 
-    @Test
+    //@Test
     public void analyze() {
         KomoranResult komoranResult = this.komoran.analyze("네가 없는 거리에는 내가 할 일이 많아서 마냥 걷다보면 추억을 가끔 마주치지.");
         List<Pair<String, String>> pairList = komoranResult.getList();
@@ -209,18 +188,18 @@ public class KomoranTest {
         }
     }
 
-    @Test
+    //@Test
     public void load() {
         this.komoran.load(modelsFullPath);
     }
 
-    @Test
+    //@Test
     public void setFWDic() {
         this.komoran.setFWDic(userDicPath+"fwd.user");
         this.komoran.analyze("감사합니다! nice good!");
     }
 
-    @Test
+    //@Test
     public void setUserDic() {
         this.komoran.setUserDic(userDicPath+"dic.user");
         System.out.println(this.komoran.analyze("싸이는 가수다").getPlainText());

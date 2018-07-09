@@ -1,21 +1,8 @@
+package komoran;
 /*******************************************************************************
- * KOMORAN 3.0 - Korean Morphology Analyzer
- *
- * Copyright 2015 Shineware http://www.shineware.co.kr
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *  
- * 	http://www.apache.org/licenses/LICENSE-2.0
- * 	
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * olivot komoran test class
  *******************************************************************************/
-package com.noori.komoran.test;
+
 
 import kr.co.shineware.nlp.komoran.modeler.builder.ModelBuilder;
 
@@ -24,6 +11,26 @@ import java.io.File;
 public class ModelBuildTest {
 
 //	public static void main(String[] args) {
+//		String userDicPath = null;
+//		String modelsFullPath = null;
+//		String modelsLightPath = null;
+//		String osName = null;
+//		if(osName == null){
+//        	osName = System.getProperty("os.name").toLowerCase();
+//			System.out.println("##### osName:"+osName);
+//        }
+//        if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+//    	    if(osName.contains("window")){
+//    		   userDicPath = "user_data"+File.separator;
+//			   modelsFullPath = "models_full";
+//			   modelsLightPath = "models_light";
+//    	    }else{
+//    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+//    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+//    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+//    	    }
+//        }
+//		
 //		modelSave(false);
 //		modelSave(true);
 //		modelLoad();
