@@ -232,44 +232,44 @@ public class KomoranTest {
         System.out.println(this.komoran.analyze("밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?").getTokenList());
     }
 
-//	public static void main(String[] args) throws Exception {
-//		if(osName == null){
-//        	osName = System.getProperty("os.name").toLowerCase();
-//			System.out.println("##### osName:"+osName);
-//       }
-//       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
-//    	   if(osName.contains("window")){
-//    		   userDicPath = "user_data"+File.separator;
-//			   modelsFullPath = "models_full";
-//			   modelsLightPath = "models_light";
-//    	   }else{
-//    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
-//    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
-//    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
-//    	   }
-//       }
-//		
-//		Komoran komoran = new Komoran(modelsFullPath);
-//		komoran.setFWDic(userDicPath+"fwd.user");
-//		komoran.setUserDic(userDicPath+"dic.user");
+	public static void main(String[] args) throws Exception {
+		if(osName == null){
+        	osName = System.getProperty("os.name").toLowerCase();
+			System.out.println("##### osName:"+osName);
+       }
+       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+    	   if(osName.contains("window")){
+    		   userDicPath = "user_data"+File.separator;
+			   modelsFullPath = "models_full";
+			   modelsLightPath = "models_light";
+    	   }else{
+    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+    	   }
+       }
+		
+		Komoran komoran = new Komoran(modelsLightPath);
+		komoran.setFWDic(userDicPath+"fwd.user");
+		komoran.setUserDic(userDicPath+"dic.user");
+
+		String input = "뭐가 더 싼지 네가 말해주길 바랬어요";
+		KomoranResult analyzeResultList = komoran.analyze(input);
+//		List<Token> tokenList = analyzeResultList.getTokenList();
 //
-//		String input = "뭐가 더 싼지 네가 말해주길 바랬어요";
-//		KomoranResult analyzeResultList = komoran.analyze(input);
-////		List<Token> tokenList = analyzeResultList.getTokenList();
-////
-////		System.out.println("==========print 'getTokenList()'==========");
-////		for (Token token : tokenList) {
-////			System.out.println(token);
-////			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
-////			System.out.println();
-////		}
-//		System.out.println("==========print 'getNouns()'==========");
-//		System.out.println(analyzeResultList.getNouns());
-//		System.out.println();
-//		System.out.println("==========print 'getPlainText()'==========");
-//		System.out.println(analyzeResultList.getPlainText());
-//		System.out.println();
-//		System.out.println("==========print 'getList()'==========");
-//		System.out.println(analyzeResultList.getList());
-//	}
+//		System.out.println("==========print 'getTokenList()'==========");
+//		for (Token token : tokenList) {
+//			System.out.println(token);
+//			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
+//			System.out.println();
+//		}
+		System.out.println("==========print 'getNouns()'==========");
+		System.out.println(analyzeResultList.getNouns());
+		System.out.println();
+		System.out.println("==========print 'getPlainText()'==========");
+		System.out.println(analyzeResultList.getPlainText());
+		System.out.println();
+		System.out.println("==========print 'getList()'==========");
+		System.out.println(analyzeResultList.getList());
+	}
 }

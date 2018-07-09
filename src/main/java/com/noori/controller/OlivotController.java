@@ -89,7 +89,7 @@ public class OlivotController {
         }else if(content.contains("개새끼")){
         	forJsonObj.put("text","왈!왈!");
         } else if(content.contains("자연어 처리:")){
-        	Komoran komoran = new Komoran(modelsFullPath);
+        	Komoran komoran = new Komoran(modelsLightPath);
         	komoran.setFWDic(userDicPath+"/fwd.user");
         	komoran.setUserDic(userDicPath+"/dic.user");
 
