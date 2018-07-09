@@ -3,9 +3,9 @@ package com.noori.controller;
 import java.util.HashMap;
 import java.util.List;
 
-import kr.co.shineware.nlp.komoran.core.Komoran;
-import kr.co.shineware.nlp.komoran.model.KomoranResult;
-import kr.co.shineware.nlp.komoran.model.Token;
+import com.noori.komoran.core.Komoran;
+import com.noori.komoran.model.KomoranResult;
+import com.noori.komoran.model.Token;
 
 import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -61,6 +61,8 @@ public class OlivotController {
         	forJsonObj.put("text","몹시 광분");
         }else if((content.contains("너")||content.contains("넌"))&&content.contains("누구")){
         	forJsonObj.put("text","난 올리봇이야 ^0^");
+        }else if(content.contains("개새끼")){
+        	forJsonObj.put("text","왈!왈!");
         } else if(content.contains("자연어 처리:")){
         	Komoran komoran = new Komoran("WEB-INF/models_full");
         	komoran.setFWDic("WEB-INF/user_data/fwd.user");
