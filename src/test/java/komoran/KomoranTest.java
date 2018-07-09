@@ -2,6 +2,8 @@ package komoran;
 /*******************************************************************************
  * olivot komoran test class
  * 
+ * mvn install 시 test 체크하려면 @Test 주석 해제
+ * 
  * "DEFAULT_MODEL.LIGHT"과 "DEFAULT_MODEL.FULL"의 차이가 무엇인가요?
  * LIGHT 모델은 일반적으로 사용되는 문장들을 학습한 모델로 다양한 분야에서 사용하실 수 있는 기본 모델입니다.
  * FULL 모델은 LIGHT 모델에 위키피디아의 타이틀을 NNP(고유명사)로 포함해서 학습한 것이며 그러므로 
@@ -230,44 +232,44 @@ public class KomoranTest {
         System.out.println(this.komoran.analyze("밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?").getTokenList());
     }
 
-	public static void main(String[] args) throws Exception {
-		if(osName == null){
-        	osName = System.getProperty("os.name").toLowerCase();
-			System.out.println("##### osName:"+osName);
-       }
-       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
-    	   if(osName.contains("window")){
-    		   userDicPath = "user_data"+File.separator;
-			   modelsFullPath = "models_full";
-			   modelsLightPath = "models_light";
-    	   }else{
-    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
-    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
-    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
-    	   }
-       }
-		
-		Komoran komoran = new Komoran(modelsFullPath);
-		komoran.setFWDic(userDicPath+"fwd.user");
-		komoran.setUserDic(userDicPath+"dic.user");
-
-		String input = "뭐가 더 싼지 네가 말해주길 바랬어요";
-		KomoranResult analyzeResultList = komoran.analyze(input);
-//		List<Token> tokenList = analyzeResultList.getTokenList();
+//	public static void main(String[] args) throws Exception {
+//		if(osName == null){
+//        	osName = System.getProperty("os.name").toLowerCase();
+//			System.out.println("##### osName:"+osName);
+//       }
+//       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+//    	   if(osName.contains("window")){
+//    		   userDicPath = "user_data"+File.separator;
+//			   modelsFullPath = "models_full";
+//			   modelsLightPath = "models_light";
+//    	   }else{
+//    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+//    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+//    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+//    	   }
+//       }
+//		
+//		Komoran komoran = new Komoran(modelsFullPath);
+//		komoran.setFWDic(userDicPath+"fwd.user");
+//		komoran.setUserDic(userDicPath+"dic.user");
 //
-//		System.out.println("==========print 'getTokenList()'==========");
-//		for (Token token : tokenList) {
-//			System.out.println(token);
-//			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
-//			System.out.println();
-//		}
-		System.out.println("==========print 'getNouns()'==========");
-		System.out.println(analyzeResultList.getNouns());
-		System.out.println();
-		System.out.println("==========print 'getPlainText()'==========");
-		System.out.println(analyzeResultList.getPlainText());
-		System.out.println();
-		System.out.println("==========print 'getList()'==========");
-		System.out.println(analyzeResultList.getList());
-	}
+//		String input = "뭐가 더 싼지 네가 말해주길 바랬어요";
+//		KomoranResult analyzeResultList = komoran.analyze(input);
+////		List<Token> tokenList = analyzeResultList.getTokenList();
+////
+////		System.out.println("==========print 'getTokenList()'==========");
+////		for (Token token : tokenList) {
+////			System.out.println(token);
+////			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
+////			System.out.println();
+////		}
+//		System.out.println("==========print 'getNouns()'==========");
+//		System.out.println(analyzeResultList.getNouns());
+//		System.out.println();
+//		System.out.println("==========print 'getPlainText()'==========");
+//		System.out.println(analyzeResultList.getPlainText());
+//		System.out.println();
+//		System.out.println("==========print 'getList()'==========");
+//		System.out.println(analyzeResultList.getList());
+//	}
 }

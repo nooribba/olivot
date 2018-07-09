@@ -37,10 +37,10 @@ public class ModelBuildTest {
 		System.out.println(modelPath+" SAVE COMPLETE");
 	}
 	
-	public static void main(String[] args) {
-		modelSave(false);//light
-		modelSave(true);//full
-		modelLoad();
-	}
+//	public static void main(String[] args) {
+//		modelSave(false);//light
+//		modelSave(true);//full
+//		modelLoad();
+//	}
 
 }
