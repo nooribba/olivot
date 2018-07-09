@@ -1,4 +1,7 @@
 target/
+user_data/
+models_full/
+models_light/
 .settings/
 .metadata
 *.tmp

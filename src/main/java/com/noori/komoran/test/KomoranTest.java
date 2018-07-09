@@ -17,18 +17,24 @@
  *******************************************************************************/
 package com.noori.komoran.test;
 
-import com.noori.komoran.constant.DEFAULT_MODEL;
-import com.noori.komoran.core.Komoran;
-import com.noori.komoran.model.KomoranResult;
-import com.noori.komoran.model.Token;
-import com.noori.komoran.parser.KoreanUnitParser;
-import com.noori.komoran.util.KomoranCallable;
+import com.noori.common.OlivotUtil;
+import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
+import kr.co.shineware.nlp.komoran.core.Komoran;
+import kr.co.shineware.nlp.komoran.model.KomoranResult;
+import kr.co.shineware.nlp.komoran.model.Token;
+import kr.co.shineware.nlp.komoran.parser.KoreanUnitParser;
+import kr.co.shineware.nlp.komoran.util.KomoranCallable;
+
 import kr.co.shineware.util.common.file.FileUtil;
 import kr.co.shineware.util.common.model.Pair;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -42,10 +48,31 @@ import org.junit.Test;
 public class KomoranTest {
 	
 	private Komoran komoran;
+	private static String userDicPath = null;
+	private static String modelsFullPath = null;
+	private static String modelsLightPath = null;
+	private static String osName = null;
 
     @Before
     public void init() {
     	this.komoran = new Komoran(DEFAULT_MODEL.LIGHT);
+    	
+    	if(osName == null){
+        	osName = OlivotUtil.getOsName();
+			System.out.println("##### osName:"+osName);
+       }
+       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+    	   if(osName.contains("window")){
+    		   userDicPath = "user_data"+File.separator;
+			   modelsFullPath = "models_full";
+			   modelsLightPath = "models_light";
+    	   }else{
+    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+    	   }
+       }
+       
     }
 
     @Test
@@ -107,7 +134,7 @@ public class KomoranTest {
     public void executorServiceTest() {
 
         long begin = System.currentTimeMillis();
-        this.komoran.analyzeTextFile("WEB-INF/user_data/wiki.titles", "WEB-INF/analyze_result.txt", 2);
+        this.komoran.analyzeTextFile(userDicPath+"wiki.titles", "WEB-INF/analyze_result.txt", 2);
         long end = System.currentTimeMillis();
 
         System.out.println("Elapsed time : " + (end - begin));
@@ -120,7 +147,7 @@ public class KomoranTest {
 
             BufferedWriter bw = new BufferedWriter(new FileWriter("WEB-INF/analyze_result.txt"));
 
-            List<String> lines = FileUtil.load2List("WEB-INF/user_data/wiki.titles");
+            List<String> lines = FileUtil.load2List(userDicPath+"wiki.titles");
 
             long begin = System.currentTimeMillis();
 
@@ -184,18 +211,18 @@ public class KomoranTest {
 
     @Test
     public void load() {
-        this.komoran.load("WEB-INF/models_full");
+        this.komoran.load(modelsFullPath);
     }
 
     @Test
     public void setFWDic() {
-        this.komoran.setFWDic("WEB-INF/user_data/fwd.user");
+        this.komoran.setFWDic(userDicPath+"fwd.user");
         this.komoran.analyze("감사합니다! nice good!");
     }
 
     @Test
     public void setUserDic() {
-        this.komoran.setUserDic("WEB-INF/user_data/dic.user");
+        this.komoran.setUserDic(userDicPath+"dic.user");
         System.out.println(this.komoran.analyze("싸이는 가수다").getPlainText());
         System.out.println(this.komoran.analyze("센트롤이").getPlainText());
         System.out.println(this.komoran.analyze("센트롤이").getTokenList());
@@ -207,9 +234,25 @@ public class KomoranTest {
     }
 
 //	public static void main(String[] args) throws Exception {
-//		Komoran komoran = new Komoran("WEB-INF/models_light");
-//		komoran.setFWDic("WEB-INF/user_data/fwd.user");
-//		komoran.setUserDic("WEB-INF/user_data/dic.user");
+//		if(osName == null){
+//        	osName = OlivotUtil.getOsName();
+//			System.out.println("##### osName:"+osName);
+//       }
+//       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+//    	   if(osName.contains("window")){
+//    		   userDicPath = "user_data"+File.separator;
+//			   modelsFullPath = "models_full";
+//			   modelsLightPath = "models_light";
+//    	   }else{
+//    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+//    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+//    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+//    	   }
+//       }
+//		
+//		Komoran komoran = new Komoran(modelsLightPath);
+//		komoran.setFWDic(userDicPath+"fwd.user");
+//		komoran.setUserDic(userDicPath+"dic.user");
 //
 //		String input = "올리브영에선 뭐가 제일 핫해?";
 //		KomoranResult analyzeResultList = komoran.analyze(input);

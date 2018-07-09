@@ -17,7 +17,7 @@
  *******************************************************************************/
 package com.noori.komoran.test;
 
-import com.noori.komoran.modeler.builder.ModelBuilder;
+import kr.co.shineware.nlp.komoran.modeler.builder.ModelBuilder;
 
 import java.io.File;
 

@@ -1,11 +1,14 @@
 package com.noori.controller;
 
+import java.io.File;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 
-import com.noori.komoran.core.Komoran;
-import com.noori.komoran.model.KomoranResult;
-import com.noori.komoran.model.Token;
+import kr.co.shineware.nlp.komoran.core.Komoran;
+import kr.co.shineware.nlp.komoran.model.KomoranResult;
+import kr.co.shineware.nlp.komoran.model.Token;
 
 import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,12 +17,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.noori.common.OlivotUtil;
+
 
 /**
  * noori
  */
 @RestController
 public class OlivotController {
+	private String userDicPath = null;
+	private String modelsFullPath = null;
+	private String modelsLightPath = null;
+	private String osName = null;
 	
     // 키보드
 	@RequestMapping(value = "/keyboard", method = RequestMethod.GET)
@@ -30,6 +39,22 @@ public class OlivotController {
         HashMap<String, Object> forJsonObj = new HashMap<String, Object>();
         forJsonObj.put("type", "text");
         jobjBtn = new JSONObject(forJsonObj);
+        
+        if(osName == null){
+        	osName = OlivotUtil.getOsName();
+			System.out.println("##### osName:"+osName);
+       }
+       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+    	   if(osName.contains("window")){
+    		   userDicPath = "user_data"+File.separator;
+			   modelsFullPath = "models_full";
+			   modelsLightPath = "models_light";
+    	   }else{
+    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+    	   }
+       }
 
         return jobjBtn.toJSONString();
     }
@@ -47,7 +72,7 @@ public class OlivotController {
         JSONObject jobjText = new JSONObject();
         HashMap<String, Object> forJsonObj = new HashMap<String, Object>();
         HashMap<String, Object> forJsonRes = new HashMap<String, Object>();
-
+        
         // 사용자 구현
         if(content.contains("안녕")){
             forJsonObj.put("text","안녕 하세요");
@@ -64,9 +89,9 @@ public class OlivotController {
         }else if(content.contains("개새끼")){
         	forJsonObj.put("text","왈!왈!");
         } else if(content.contains("자연어 처리:")){
-        	Komoran komoran = new Komoran("WEB-INF/models_full");
-        	komoran.setFWDic("WEB-INF/user_data/fwd.user");
-        	komoran.setUserDic("WEB-INF/user_data/dic.user");
+        	Komoran komoran = new Komoran(modelsFullPath);
+        	komoran.setFWDic(userDicPath+"/fwd.user");
+        	komoran.setUserDic(userDicPath+"/dic.user");
 
         	String input = content.substring(7);
         	KomoranResult analyzeResultList = komoran.analyze(input);
@@ -91,9 +116,9 @@ public class OlivotController {
         HashMap<String, Object> forJsonObj = new HashMap<String, Object>();
         
         //String userBaseDir = System.getProperty("user.dir");
-        Komoran komoran = new Komoran("WEB-INF/models_light");
-    	komoran.setFWDic("WEB-INF/user_data/fwd.user");
-    	komoran.setUserDic("WEB-INF/user_data/dic.user");
+        Komoran komoran = new Komoran(modelsLightPath);
+    	komoran.setFWDic(userDicPath+"/fwd.user");
+    	komoran.setUserDic(userDicPath+"/dic.user");
 
     	String input = "밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?";
     	KomoranResult analyzeResultList = komoran.analyze(input);
