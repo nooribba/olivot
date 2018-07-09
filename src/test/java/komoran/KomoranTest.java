@@ -1,6 +1,22 @@
 package komoran;
 /*******************************************************************************
  * olivot komoran test class
+ * 
+ * "DEFAULT_MODEL.LIGHT"과 "DEFAULT_MODEL.FULL"의 차이가 무엇인가요?
+ * LIGHT 모델은 일반적으로 사용되는 문장들을 학습한 모델로 다양한 분야에서 사용하실 수 있는 기본 모델입니다.
+ * FULL 모델은 LIGHT 모델에 위키피디아의 타이틀을 NNP(고유명사)로 포함해서 학습한 것이며 그러므로 
+ * LIGHT 모델보다 상대적으로 용량이 큽니다.
+ * 형태소 분석기의 결과가 그대로 서비스에 노출되는 어플리케이션이 아니라면 LIGHT 모델을 권장해 드립니다.
+ * 
+ * "setFWDDic"과 "setUserDic"은 무엇인가요?
+ * "setFWDDic"은 파일 형태의 기분석 사전을 형태소 분석기에 적재하는 메소드입니다. 
+ * 기분석 사전은 일종의 cache입니다. 어절 단위로 기분석 사전을 lookup하여 값이 있는 경우에만 
+ * 형태소 분석 단계를 거치지 않고 lookup 된 값이 그대로 분석 결과에 반영됩니다.
+ * "setUserDic"은 사용자 사전을 형태소 분석기에 적재하는 메소드입니다. 
+ * 사용자 사전에 포함된 형태소들은 형태소 분석 단계에서 가장 높은 우선순위가 부여됩니다. 
+ * 사용자 사전에 포함된 형태소가 분석 대상 문장 내에서 문법적인 위치만 일치한다면 사용자가 지정한 품사로 분석됩니다. 
+ * 사이드 이펙트가 발생할 수 있으니 주의하여 사용하셔야 합니다.
+ * 
  *******************************************************************************/
 
 import java.io.BufferedWriter;
@@ -13,6 +29,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
+
 import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
 import kr.co.shineware.nlp.komoran.core.Komoran;
 import kr.co.shineware.nlp.komoran.model.KomoranResult;
@@ -21,6 +38,7 @@ import kr.co.shineware.nlp.komoran.parser.KoreanUnitParser;
 import kr.co.shineware.nlp.komoran.util.KomoranCallable;
 import kr.co.shineware.util.common.file.FileUtil;
 import kr.co.shineware.util.common.model.Pair;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -212,29 +230,29 @@ public class KomoranTest {
         System.out.println(this.komoran.analyze("밀리언 달러 베이비랑 바람과 함께 사라지다랑 뭐가 더 재밌었어?").getTokenList());
     }
 
-//	public static void main(String[] args) throws Exception {
-//		if(osName == null){
-//        	osName = OlivotUtil.getOsName();
-//			System.out.println("##### osName:"+osName);
-//       }
-//       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
-//    	   if(osName.contains("window")){
-//    		   userDicPath = "user_data"+File.separator;
-//			   modelsFullPath = "models_full";
-//			   modelsLightPath = "models_light";
-//    	   }else{
-//    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
-//    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
-//    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
-//    	   }
-//       }
-//		
-//		Komoran komoran = new Komoran(modelsLightPath);
-//		komoran.setFWDic(userDicPath+"fwd.user");
-//		komoran.setUserDic(userDicPath+"dic.user");
-//
-//		String input = "올리브영에선 뭐가 제일 핫해?";
-//		KomoranResult analyzeResultList = komoran.analyze(input);
+	public static void main(String[] args) throws Exception {
+		if(osName == null){
+        	osName = System.getProperty("os.name").toLowerCase();
+			System.out.println("##### osName:"+osName);
+       }
+       if(userDicPath == null || modelsFullPath == null || modelsLightPath == null){
+    	   if(osName.contains("window")){
+    		   userDicPath = "user_data"+File.separator;
+			   modelsFullPath = "models_full";
+			   modelsLightPath = "models_light";
+    	   }else{
+    		   userDicPath = "WEB-INF"+File.separator+"user_data"+File.separator;
+    		   modelsFullPath = "WEB-INF"+File.separator+"models_full";
+    		   modelsLightPath = "WEB-INF"+File.separator+"models_light";
+    	   }
+       }
+		
+		Komoran komoran = new Komoran(modelsFullPath);
+		komoran.setFWDic(userDicPath+"fwd.user");
+		komoran.setUserDic(userDicPath+"dic.user");
+
+		String input = "뭐가 더 싼지 네가 말해주길 바랬어요";
+		KomoranResult analyzeResultList = komoran.analyze(input);
 //		List<Token> tokenList = analyzeResultList.getTokenList();
 //
 //		System.out.println("==========print 'getTokenList()'==========");
@@ -243,13 +261,13 @@ public class KomoranTest {
 //			System.out.println(token.getMorph()+"/"+token.getPos()+"("+token.getBeginIndex()+","+token.getEndIndex()+")");
 //			System.out.println();
 //		}
-//		System.out.println("==========print 'getNouns()'==========");
-//		System.out.println(analyzeResultList.getNouns());
-//		System.out.println();
-//		System.out.println("==========print 'getPlainText()'==========");
-//		System.out.println(analyzeResultList.getPlainText());
-//		System.out.println();
-//		System.out.println("==========print 'getList()'==========");
-//		System.out.println(analyzeResultList.getList());
-//	}
+		System.out.println("==========print 'getNouns()'==========");
+		System.out.println(analyzeResultList.getNouns());
+		System.out.println();
+		System.out.println("==========print 'getPlainText()'==========");
+		System.out.println(analyzeResultList.getPlainText());
+		System.out.println();
+		System.out.println("==========print 'getList()'==========");
+		System.out.println(analyzeResultList.getList());
+	}
 }
