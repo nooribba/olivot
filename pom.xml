@@ -19,7 +19,7 @@
    </parent> -->
   
   <name>olivot</name>
-  <description>Demo project for Spring Boot</description>
+  <description>olivott</description>
   
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
