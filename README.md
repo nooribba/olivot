@@ -9,7 +9,21 @@
 
     http://oliveyoung.co.kr
 
-### 한글 형태소 분석
+### 한글 처리
+  
+    twitter-korean-text v4.4
+    https://github.com/twitter/twitter-korean-text
+    
+    - 정규화(Normalization)
+       : 입니닼ㅋㅋ -> 입니다
+    - 토큰화(Tokenization) 
+       : 한국어 처리하는 예시입니다 -> 한국어Noun,처리Noun,하는Verb,예시Noun,입Adjective,니다Eomi
+    - 어근화(Stemming) 
+       : 입니다 -> 이다
+    - 어구 추출(Phrase Extraction)
+       : 한국어 처리하는 예시입니다 -> 한국어,처리,예시,처리하는 예시
 
-    KOMORAN3
-    https://github.com/shin285/KOMORAN
+### 머신 러닝
+  
+    deeplearning4j
+    https://deeplearning4j.org/
