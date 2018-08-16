@@ -1,0 +1,552 @@
+2018-08-03 15:01:31,329 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-03 15:01:32,574 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.NoClassDefFoundError: Could not initialize class org.bytedeco.javacpp.cuda
+
+2018-08-03 15:01:32,997 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [89.46];
+
+2018-08-03 15:13:28,152 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-03 15:13:28,180 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-03 15:13:36,790 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-03 15:13:40,760 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-03 15:13:40,764 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-03 15:13:40,764 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-03 15:13:40,764 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-03 15:13:42,432 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-03 15:13:44,021 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [90.03];
+
+2018-08-03 15:28:37,860 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-03 15:28:37,882 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-03 15:28:41,752 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-03 15:28:59,827 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-03 15:28:59,838 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-03 15:28:59,839 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-03 15:28:59,839 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-03 15:29:02,803 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-03 15:29:04,468 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [80.69];
+
+2018-08-06 09:35:58,777 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-06 09:35:58,836 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-06 09:36:02,818 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-06 09:36:19,931 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-06 09:36:19,938 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-06 09:36:19,938 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-06 09:36:19,938 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-06 09:36:22,227 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-06 09:36:25,101 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [42.36];
+
+2018-08-06 10:45:22,538 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-06 10:45:22,562 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-06 10:45:26,913 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-06 10:46:01,501 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-06 10:46:01,505 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-06 10:46:01,506 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-06 10:46:01,506 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-06 10:46:04,787 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-06 10:46:06,639 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [62.08];
+
+2018-08-06 13:33:37,391 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-06 13:33:37,423 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-06 13:33:41,331 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-06 13:34:27,490 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-06 13:34:27,501 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-06 13:34:27,507 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-06 13:34:27,513 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-06 13:34:32,731 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-06 13:34:36,309 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [58.58];
+
+2018-08-06 16:23:59,249 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-06 16:23:59,280 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-06 16:24:02,984 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-06 16:24:09,376 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-06 16:24:09,380 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-06 16:24:09,381 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-06 16:24:09,381 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-06 16:24:13,167 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-06 16:24:15,228 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [71.98];
+
+2018-08-07 09:44:22,873 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-07 09:44:22,908 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-07 09:44:26,472 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-07 09:44:46,610 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-07 09:44:46,619 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-07 09:44:46,619 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-07 09:44:46,620 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-07 09:44:48,631 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-07 09:44:50,700 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [59.83];
+
+2018-08-07 09:57:01,965 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-07 09:57:01,995 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-07 09:57:05,946 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-07 09:57:34,681 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-07 09:57:34,686 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-07 09:57:34,687 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-07 09:57:34,687 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-07 09:57:36,590 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-07 09:57:38,887 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [80.00];
+
+2018-08-07 11:33:14,270 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-07 11:33:14,291 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-07 11:33:17,025 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-07 11:33:18,859 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-07 11:33:18,866 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-07 11:33:18,866 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-07 11:33:18,866 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-07 11:33:19,988 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-07 11:33:21,245 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [126.13];
+
+2018-08-07 16:54:23,606 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-07 16:54:23,639 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-07 16:54:27,505 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-07 16:54:35,031 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-07 16:54:35,037 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-07 16:54:35,037 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-07 16:54:35,037 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-07 16:54:37,131 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-07 16:54:41,850 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [31.22];
+
+2018-08-08 10:06:47,101 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-08 10:06:47,133 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-08 10:06:50,830 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-08 10:06:59,848 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-08 10:06:59,853 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-08 10:06:59,853 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-08 10:06:59,854 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-08 10:07:01,325 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-08 10:07:02,770 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [101.45];
+
+2018-08-08 13:39:48,495 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-08 13:39:48,516 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-08 13:39:50,949 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-08 13:40:12,569 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-08 13:40:12,575 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-08 13:40:12,576 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-08 13:40:12,576 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-08 13:40:13,903 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-08 13:40:15,444 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [115.70];
+
+2018-08-08 13:49:33,560 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-08 13:49:33,590 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-08 13:49:36,361 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-08 13:49:46,892 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-08 13:49:46,898 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-08 13:49:46,898 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-08 13:49:46,899 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-08 13:49:48,195 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-08 13:49:49,626 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [87.77];
+
+2018-08-08 15:24:42,718 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-08 15:24:42,743 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-08 15:24:45,571 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-08 15:25:06,982 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-08 15:25:06,987 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-08 15:25:06,988 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-08 15:25:06,988 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-08 15:25:09,672 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-08 15:25:11,477 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [65.88];
+
+2018-08-16 09:10:19,922 - [WARN] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Skipped [JCublasBackend] backend (unavailable): java.lang.UnsatisfiedLinkError: C:\Users\cj\.javacpp\cache\cuda-9.1-7.1-1.4.1-windows-x86_64.jar\org\bytedeco\javacpp\windows-x86_64\jnicuda.dll: Can't find dependent libraries
+
+2018-08-16 09:10:19,945 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in main
+                
+Loaded [CpuBackend] backend
+
+2018-08-16 09:10:23,922 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in main
+                
+Number of threads used for NativeOps: 2
+
+2018-08-16 09:10:25,267 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 2
+
+2018-08-16 09:10:25,274 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Backend used: [CPU]; OS: [Windows 7]
+
+2018-08-16 09:10:25,275 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Cores: [4]; Memory: [1.8GB];
+
+2018-08-16 09:10:25,276 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in main
+                
+Blas vendor: [OPENBLAS]
+
+2018-08-16 09:10:27,022 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in main
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: SEPARATE; inference: SEPARATE]
+
+2018-08-16 09:10:29,718 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [28], Current vocabulary size: [60]; Sequences/sec: [38.25];
+

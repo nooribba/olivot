@@ -1,3 +1,6 @@
+service/output/
+docs/
+data/
 target/
 user_data/
 models_full/
@@ -27,3 +30,4 @@ result/
 *.exe
 *.o
 *.so
+service/src/main/webapp/WEB-INF/quickstart-web.xml
