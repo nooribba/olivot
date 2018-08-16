@@ -1,6 +1,21 @@
 # olivot:올리봇
 ## 2018 OYIT OT&amp;OT Project
 
+### 선행작업
+
+    1. Clone the repository https://github.com/Microsoft/botbuilder-java to disk
+    2. Open a terminal and navigate to the repository
+    3. Run the command mvn install to install the botbuilder SDK for Java
+
+### 사용법
+
+    1. mvn clean compile
+    2. mvn package 
+    3. deploy war
+    
+    Local) mvn clean compile > Application Add to Server > Start Server
+    
+
 ### 카카오톡 플러스친구 적용 중
 
     https://center-pf.kakao.com/_rNxbtC
