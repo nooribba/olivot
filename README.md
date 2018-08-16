@@ -6,8 +6,8 @@
     1. Clone repository 
        https://github.com/Microsoft/botbuilder-java
     2. mvn install to install the botbuilder SDK for Java
-    [^1] 어때요.
-    [^1]: 참 쉽죠?
+    어때요.[^1]
+    참 쉽죠?
 
 ### 사용법
 
