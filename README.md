@@ -3,9 +3,9 @@
 
 ### 선행작업
 
-    1. Clone the repository https://github.com/Microsoft/botbuilder-java to disk
-    2. Open a terminal and navigate to the repository
-    3. Run the command mvn install to install the botbuilder SDK for Java
+    1. Clone repository 
+       https://github.com/Microsoft/botbuilder-java
+    2. mvn install to install the botbuilder SDK for Java
 
 ### 사용법
 
