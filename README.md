@@ -1,11 +1,11 @@
 # olivot:올리봇
 ## 2018 OYIT OT&amp;OT Project
 
-/*### 선행작업
+### 선행작업
 
-    1. Clone repository 
+[^1]:    1. Clone repository 
        https://github.com/Microsoft/botbuilder-java
-    2. mvn install to install the botbuilder SDK for Java*/
+    2. mvn install to install the botbuilder SDK for Java
 
 ### 사용법
 
