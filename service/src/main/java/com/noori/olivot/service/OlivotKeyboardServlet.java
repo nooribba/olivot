@@ -11,11 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
+import org.springframework.web.bind.annotation.RestController;
+
 
 
 /**
  * HTTP servlet that handles incoming HTTP messages by directing them to the chatbot implementation.
  */
+@RestController
 public final class OlivotKeyboardServlet extends HttpServlet {
     private static Logger logger = Logger.getLogger(OlivotKeyboardServlet.class.getName());
 
