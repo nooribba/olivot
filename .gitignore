@@ -1,4 +1,5 @@
 service/output/
+service/target/
 docs/
 data/
 target/
@@ -31,3 +32,4 @@ result/
 *.o
 *.so
 service/src/main/webapp/WEB-INF/quickstart-web.xml
+service/src/test/

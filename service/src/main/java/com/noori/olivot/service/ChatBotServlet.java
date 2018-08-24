@@ -17,6 +17,7 @@ import com.microsoft.rest.credentials.ServiceClientCredentials;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -80,6 +81,8 @@ public final class ChatBotServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
         	logger.info("##### doPost request content length : "+request.getContentLength());
+        	//((ServletResponse) request).setContentType("application/json;charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
             String authorizationHeader = request.getHeader("Authorization");
             Activity activity = deserializeActivity(request);
 
@@ -95,8 +98,10 @@ public final class ChatBotServlet extends HttpServlet {
             bot.handle(context);
 
             // Always send a HTTP 202 notifying the bot framework channel that we've handled the incoming request.
-            response.setStatus(202);
-            response.setContentLength(0);
+            /*response.setStatus(202);
+            response.setContentLength(0);*/
+            response.setContentType("application/json;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
         } catch (AuthenticationException ex) {
             logger.log(Level.WARNING, "User is not authenticated", ex);
             writeJsonResponse(response, 401, new ApplicationError("Unauthenticated request"));

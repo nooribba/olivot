@@ -1,0 +1,30 @@
+﻿index,text,answer
+1,"Where can I buy tickets?",1
+2,"Where can I register?",1
+3,"How can I register?",1
+4,"Where do I get my tickets?",1
+5,"Where can I find the agenda?",2
+6,"What does the schedule look like?",2
+7,"Where can I find out about which sessions are where?",2
+8,"Where can I find the schedule?",2
+9,"Where can I find the location of the sessions?",2
+10,"Where can I find the location of the next session?",2
+11,"Where's the next session?",2
+12,"Where can I find an overview of all the sessions?",2
+13,"Where can I find more information about the speakers",3
+14,"Where can I find the speaker information?",3
+15,"Which speakers are presenting sessions?",3
+16,"I'm looking for information about a speaker, where can I find that?",3
+17,"I need information on a specific speaker, where can I find that?",3
+18,"I'm looking for a specific speaker",3
+19,"Where's the conference being held?",4
+20,"Where's the conference location",4
+21,"What's the address of the conference venue?",4
+22,"How do I get to the conference venue?",4
+23,"I'm interested in the workshops, where can I learn more about them?",5
+24,"Where can I find the overview of the workshops",5
+25,"I need some information about the workshops",5
+26,"What workshops are available?",5
+27,"Which workshops can I attend?",5
+28,"Where can I find the list of workshops?",5
+29,"안녕하세요",6

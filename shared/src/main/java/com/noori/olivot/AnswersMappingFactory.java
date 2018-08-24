@@ -22,7 +22,9 @@ public class AnswersMappingFactory {
 
                 // Note: The answer index needs a -1, so that we get an offset mapping.
                 // this is required by the neural network. But instead of fixing it there, we're fixing it here.
-                answers.put(record.get(0).toInt() - 1, record.get(1).toString());
+                String anStr = new String(record.get(1).toString().getBytes(),"UTF-8");
+                System.out.println("##### answer : "+anStr);
+                answers.put(record.get(0).toInt() - 1, anStr);
             }
 
             return answers;

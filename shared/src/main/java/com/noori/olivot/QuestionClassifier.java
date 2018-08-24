@@ -97,13 +97,20 @@ public final class QuestionClassifier {
      * @return The highest ranking answer
      */
     public String predict(String text) {
-    	
+    	logger.info("##### text : "+text);
         INDArray prediction = network.output(vectorizer.transform(text));
         //logger.info("##### vectorizer.transform : "+vectorizer.transform(text).toString());
         int answerIndex = prediction.argMax(1).getInt(0,0);
+        
         logger.info("##### answerIndex : "+answerIndex);
         logger.info("##### prediction getrow(0):"+prediction.getRow(0));
-        logger.info("##### answers:"+answers.get(answerIndex).toString());
+        logger.info("##### answers.get("+answerIndex+"):"+answers.get(answerIndex));
+        logger.info("##### answers.get(0):"+answers.get(0));
+        logger.info("##### answers.get(1):"+answers.get(1));
+        logger.info("##### answers.get(2):"+answers.get(2));
+        logger.info("##### answers.get(3):"+answers.get(3));
+        logger.info("##### answers.get(4):"+answers.get(4));
+        logger.info("##### answers.get(5):"+answers.get(5));
         return answers.get(answerIndex);
     }
 

@@ -14,7 +14,7 @@ public class AnswerMappingFactoryTests {
     public void createReturnsMapping() throws Exception {
         Map<Integer,String> mapping = AnswersMappingFactory.create(new File("../data/answers.csv"));
 
-        assertThat(mapping.size()).isEqualTo(5);
+        assertThat(mapping.size()).isEqualTo(6);
 
         for(Integer key : mapping.keySet()) {
             assertThat(mapping.get(key)).isNotEmpty();
