@@ -9,11 +9,12 @@
 
 ### 사용법
 
-    1. mvn clean compile
-    2. mvn package 
-    3. deploy war
+    1. java -jar training/target/training-1.0-SNAPSHOT.jar to generate vectorizer/classifier.bin from q&a csv
+    2. mvn clean compile
+    3. mvn package 
+    4. deploy war
     
-    Local) mvn clean compile > Application Add to Server > Start Server
+    Local) Application Add to Server > Start Server
     
 
 ### 카카오톡 플러스친구 적용 중
