@@ -20,13 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.aad.adal4j.AuthenticationException;
-import com.microsoft.bot.connector.ConnectorClient;
 import com.microsoft.bot.connector.customizations.CredentialProvider;
 import com.microsoft.bot.connector.customizations.CredentialProviderImpl;
-import com.microsoft.bot.connector.customizations.JwtTokenValidation;
 import com.microsoft.bot.connector.customizations.MicrosoftAppCredentials;
-import com.microsoft.bot.connector.implementation.ConnectorClientImpl;
 import com.microsoft.bot.schema.models.Activity;
 import com.microsoft.rest.credentials.ServiceClientCredentials;
 //import com.twitter.penguin.korean.tokenizer.KoreanTokenizer;
@@ -42,6 +38,8 @@ public final class OlivotMessageServlet extends HttpServlet {
     private final ObjectMapper objectMapper;
     private final CredentialProvider credentialProvider;
     private final ServiceClientCredentials clientCredentials;
+    //private final CredentialProvider credentialProvider;
+    //private final ServiceClientCredentials clientCredentials;
     private final ChatBot bot;
     private OlivotImpl impl;
     
@@ -53,6 +51,9 @@ public final class OlivotMessageServlet extends HttpServlet {
         this.credentialProvider = new CredentialProviderImpl(getAppId(), getKey());
         this.objectMapper = ObjectMapperFactory.createObjectMapper();
         this.clientCredentials = new MicrosoftAppCredentials(getAppId(), getKey());
+        //this.credentialProvider = new CredentialProviderImpl(getAppId(), getKey());
+        //this.objectMapper = ObjectMapperFactory.createObjectMapper();
+        //this.clientCredentials = new MicrosoftAppCredentials(getAppId(), getKey());
         this.bot = bot;
     }
 
@@ -127,7 +128,8 @@ public final class OlivotMessageServlet extends HttpServlet {
             	HashMap<String, Object> forJsonRes = new HashMap<String, Object>();
             	
             	logger.log(Level.INFO,"##### Olivot normalizedMessage : "+normalizedMessage);
-            	String predictMsg = impl.predictHandle(normalizedMessage, request, response);
+            	//String predictMsg = impl.predictHandle(normalizedMessage, request, response);
+            	String predictMsg = impl.predictHandle(normalizedMessage);
             	forJsonObj.put("text",predictMsg);
             	jobjText = new JSONObject(forJsonObj);
             	forJsonRes.put("message", jobjText);
@@ -149,8 +151,6 @@ public final class OlivotMessageServlet extends HttpServlet {
             //response.getWriter().append(returnStr);
             //response.getWriter().print(returnStr);
             response.getWriter().write(returnStr);
-        } catch (AuthenticationException ex) {
-            logger.log(Level.WARNING, "User is not authenticated", ex);
         } catch (Exception ex) {
             logger.log(Level.SEVERE, "Failed to process incoming activity", ex);
         }

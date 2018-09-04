@@ -70,6 +70,8 @@ public final class MsBotServlet extends HttpServlet {
         try {
         	logger.info("##### doPost request content length : "+request.getContentLength());
         	request.setCharacterEncoding("UTF-8");
+        	//((ServletResponse) request).setContentType("application/json;charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
             String authorizationHeader = request.getHeader("Authorization");
             Activity activity = deserializeActivity(request);
 

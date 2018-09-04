@@ -98,11 +98,16 @@ public final class QuestionClassifier {
      * @return The highest ranking answer
      */
     public String predict(String text) {
+<<<<<<< HEAD
+=======
+    	logger.info("##### text : "+text);
+>>>>>>> 6dce4099da59e36f4706001e422291bd9bd00dad
         INDArray prediction = network.output(vectorizer.transform(text));
     	INDArray prediction_test = vectorizer.transform(text);
         //logger.info("##### vectorizer.transform : "+vectorizer.transform(text).toString());
         int answerIndex = prediction.argMax(1).getInt(0,0);
         
+<<<<<<< HEAD
         logger.info("##### prediction getrow(0):"+prediction.getRow(0));
         logger.info("##### prediction:"+prediction);
         logger.info("##### prediction_test:"+prediction_test);
@@ -117,6 +122,18 @@ public final class QuestionClassifier {
         }
         
         return result;
+=======
+        logger.info("##### answerIndex : "+answerIndex);
+        logger.info("##### prediction getrow(0):"+prediction.getRow(0));
+        logger.info("##### answers.get("+answerIndex+"):"+answers.get(answerIndex));
+        logger.info("##### answers.get(0):"+answers.get(0));
+        logger.info("##### answers.get(1):"+answers.get(1));
+        logger.info("##### answers.get(2):"+answers.get(2));
+        logger.info("##### answers.get(3):"+answers.get(3));
+        logger.info("##### answers.get(4):"+answers.get(4));
+        logger.info("##### answers.get(5):"+answers.get(5));
+        return answers.get(answerIndex);
+>>>>>>> 6dce4099da59e36f4706001e422291bd9bd00dad
     }
 
     /**

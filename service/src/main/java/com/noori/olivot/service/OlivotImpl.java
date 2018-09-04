@@ -1,21 +1,22 @@
 package com.noori.olivot.service;
 
-import com.microsoft.bot.schema.models.Activity;
-import com.microsoft.bot.schema.models.ActivityTypes;
-import com.noori.olivot.*;
-import com.twitter.penguin.korean.TwitterKoreanProcessorJava;
-
-import javax.servlet.ServletContext;
-
 import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.microsoft.bot.schema.models.Activity;
+import com.microsoft.bot.schema.models.ActivityTypes;
+import com.noori.olivot.AnswersMappingFactory;
+import com.noori.olivot.QuestionClassifier;
+import com.noori.olivot.QuestionClassifierFactory;
+import com.noori.olivot.QuestionVectorizerFactory;
+import com.noori.olivot.TextVectorizer;
+import com.twitter.penguin.korean.TwitterKoreanProcessorJava;
 
 /**
  * Chatbot implementation
@@ -47,11 +48,6 @@ public final class OlivotImpl implements ChatBot {
         }
     }
 
-    /**
-     * Handles incoming chatbot activities
-     *
-     * @param context Context for the current conversation
-     */
     @Override
     public void handle(ConversationContext context) {
     	logger.info("##### Olivot def handle");
