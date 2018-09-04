@@ -17,7 +17,11 @@ public class QuestionVectorizerFactoryTests {
         TextVectorizer questionVectorizer = QuestionVectorizerFactory.create(new File("../data/questions_train.csv"));
         questionVectorizer.fit();
 
-        INDArray output = questionVectorizer.transform("How can I register?");
+        //INDArray output = questionVectorizer.transform("How can I register?");
+        INDArray output = questionVectorizer.transform("Where can I find the agenda?");
+        INDArray output2 = questionVectorizer.transform("How can I register?");
+        System.out.println("@@@@@ QuestionVectorizerFactoryTests output : "+output);
+        System.out.println("@@@@@ QuestionVectorizerFactoryTests output2 : "+output2);
 
         assertThat(Nd4j.zeros(1,output.size(1))).isNotEqualTo(output);
     }

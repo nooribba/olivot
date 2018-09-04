@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>botServlet</servlet-name>
-        <servlet-class>com.noori.olivot.service.ChatBotServlet</servlet-class>
+        <servlet-class>com.noori.olivot.service.MsBotServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>botServlet</servlet-name>
@@ -26,5 +26,13 @@
     <servlet-mapping>
         <servlet-name>olivotKeyboardServlet</servlet-name>
         <url-pattern>/keyboard</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>olivotCustomServlet</servlet-name>
+        <servlet-class>com.noori.olivot.service.OlivotCustomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>olivotCustomServlet</servlet-name>
+        <url-pattern>/custom</url-pattern>
     </servlet-mapping>
 </web-app>

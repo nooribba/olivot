@@ -8,6 +8,7 @@ import org.nd4j.linalg.factory.Nd4j;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -97,14 +98,25 @@ public final class QuestionClassifier {
      * @return The highest ranking answer
      */
     public String predict(String text) {
-    	
         INDArray prediction = network.output(vectorizer.transform(text));
+    	INDArray prediction_test = vectorizer.transform(text);
         //logger.info("##### vectorizer.transform : "+vectorizer.transform(text).toString());
         int answerIndex = prediction.argMax(1).getInt(0,0);
-        logger.info("##### answerIndex : "+answerIndex);
+        
         logger.info("##### prediction getrow(0):"+prediction.getRow(0));
-        logger.info("##### answers:"+answers.get(answerIndex).toString());
-        return answers.get(answerIndex);
+        logger.info("##### prediction:"+prediction);
+        logger.info("##### prediction_test:"+prediction_test);
+        
+        logger.info("##### answerIndex : "+answerIndex);
+        logger.info("##### test answerIndex : "+prediction_test.argMax(1).getInt(0,0));
+        String result = answers.get(answerIndex);
+        if(result == null ) {
+        	result = "I should study more. TT.TT Please ask again.";
+        }else {
+        	result = setEncoding(result,"UTF-8");
+        }
+        
+        return result;
     }
 
     /**
@@ -114,5 +126,25 @@ public final class QuestionClassifier {
      */
     public void save(File outputFile) throws IOException {
         ModelSerializer.writeModel(this.network, outputFile, false);
+    }
+    
+    public String setEncoding(String text, String enc) {
+    	String result = text;
+    	try {
+			result = new String(text.getBytes(), enc);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+    	return result;
+    }
+    
+    public void checkNetworkOutput(INDArray arr) {
+    	INDArray output = this.network.output(arr);
+    	System.out.println("##### network output : "+output);
+    	//logger.info("##### network output : "+output);
+    	int answerIndex = output.argMax(1).getInt(0,0);
+        System.out.println("##### network output answerIndex : "+answerIndex);
+        logger.info("##### network output answerIndex : "+answerIndex);
+        logger.info("##### network answer text : "+setEncoding(answers.get(answerIndex),"UTF-8"));
     }
 }

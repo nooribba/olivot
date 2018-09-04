@@ -6,7 +6,7 @@ import com.microsoft.bot.schema.models.ActivityTypes;
 import com.microsoft.bot.schema.models.ChannelAccount;
 import com.microsoft.bot.schema.models.ConversationAccount;
 import com.noori.olivot.service.ChatBot;
-import com.noori.olivot.service.ChatBotServlet;
+import com.noori.olivot.service.MsBotServlet;
 import com.noori.olivot.service.ConversationContext;
 import com.noori.olivot.service.ObjectMapperFactory;
 
@@ -28,7 +28,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class ChatBotServletTests {
     private ChatBot bot;
-    private ChatBotServlet servlet;
+    private MsBotServlet servlet;
     private HttpServletRequest request;
     private HttpServletResponse response;
 
@@ -38,7 +38,7 @@ public class ChatBotServletTests {
         request = mock(HttpServletRequest.class);
 
         bot = mock(ChatBot.class);
-        servlet = new ChatBotServlet(bot);
+        servlet = new MsBotServlet(bot);
     }
 
     @Test

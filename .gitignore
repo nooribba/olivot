@@ -1,4 +1,6 @@
 service/output/
+service/target/
+service/src/main/java/com/noori/olivot/service/Test*
 docs/
 data/
 target/
@@ -31,3 +33,4 @@ result/
 *.o
 *.so
 service/src/main/webapp/WEB-INF/quickstart-web.xml
+service/src/test/

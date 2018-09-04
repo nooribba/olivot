@@ -1,0 +1,23 @@
+{
+    "name": "olivot-qna",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "appId": "cc1d687e-2f13-4879-8077-46ea44e23a93",
+            "id": "fe60ea30-acc1-11e8-960b-cb54ab122242",
+            "type": "endpoint",
+            "appPassword": "}9k@i:[HifaW_}ss",
+            "endpoint": "https://olivot-qna.azurewebsites.net/qnamaker",
+            "name": "https://olivot-qna.azurewebsites.net/qnamaker"
+        },
+        {
+            "id": "4be54670-acc2-11e8-b91e-d1ad1d101050",
+            "name": "azure",
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "}9k@i:[HifaW_}ss",
+            "endpoint": "https://olivot-qna.azurewebsites.net/qnamaker/knowledgebases/c397f505-3649-4b4c-8394-09ab79415a24/generateAnswer"
+        }
+    ]
+}

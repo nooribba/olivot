@@ -19,4 +19,6 @@ public interface ChatBot {
      * @param context Servlet context in which the bot is used
      */
     void init(ServletContext context);
+    
+    String olivotHandle(ConversationContext context);
 }
