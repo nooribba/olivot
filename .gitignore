@@ -1,5 +1,6 @@
 service/output/
 service/target/
+training/logs/
 service/src/main/java/com/noori/olivot/service/Test*
 docs/
 data/
