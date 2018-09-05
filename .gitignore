@@ -34,4 +34,5 @@ result/
 *.o
 *.so
 service/src/main/webapp/WEB-INF/quickstart-web.xml
+service/src/main/webapp/WEB-INF/bk/
 service/src/test/
