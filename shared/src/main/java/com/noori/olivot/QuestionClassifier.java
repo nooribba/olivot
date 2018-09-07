@@ -32,6 +32,7 @@ public final class QuestionClassifier {
         this.network = network;
         this.vectorizer = vectorizer;
         this.answers = answers;
+        //logger.info("##### answer 6-1:"+answers.get(6));
     }
 
     /**
@@ -98,21 +99,26 @@ public final class QuestionClassifier {
      * @return The highest ranking answer
      */
     public String predict(String text) {
+    	logger.info("##### text:"+text);
         INDArray prediction = network.output(vectorizer.transform(text));
-    	INDArray prediction_test = vectorizer.transform(text);
+    	//INDArray prediction_test = vectorizer.transform(text);
         //logger.info("##### vectorizer.transform : "+vectorizer.transform(text).toString());
         int answerIndex = prediction.argMax(1).getInt(0,0);
         
         logger.info("##### prediction getrow(0):"+prediction.getRow(0));
         logger.info("##### prediction:"+prediction);
-        logger.info("##### prediction_test:"+prediction_test);
-        
+        //logger.info("##### prediction_test:"+prediction_test);
+        //logger.info("##### answer 6:"+answers.get(6));
         logger.info("##### answerIndex : "+answerIndex);
-        logger.info("##### test answerIndex : "+prediction_test.argMax(1).getInt(0,0));
+        //logger.info("##### test answerIndex : "+prediction_test.argMax(1).getInt(0,0));
         String result = answers.get(answerIndex);
+        //testEncoding(result);
         if(result == null ) {
         	result = "I should study more. TT.TT Please ask again.";
         }else {
+        	/*System.out.println("EUC-KR : "+setEncoding(result,"EUC-KR"));
+        	System.out.println("UTF-EUC : "+setEncoding(result,"UTF-8","EUC-KR"));
+        	System.out.println("EUC-UTF : "+setEncoding(result,"EUC-KR","UTF-8"));*/
         	result = setEncoding(result,"UTF-8");
         }
         
@@ -131,7 +137,16 @@ public final class QuestionClassifier {
     public String setEncoding(String text, String enc) {
     	String result = text;
     	try {
-			result = new String(text.getBytes(), enc);
+			result = new String(text.getBytes(enc), enc);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+    	return result;
+    }
+    public String setEncoding(String text, String dec, String enc) {
+    	String result = text;
+    	try {
+			result = new String(text.getBytes(dec), enc);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
@@ -146,5 +161,19 @@ public final class QuestionClassifier {
         System.out.println("##### network output answerIndex : "+answerIndex);
         logger.info("##### network output answerIndex : "+answerIndex);
         logger.info("##### network answer text : "+setEncoding(answers.get(answerIndex),"UTF-8"));
+        testEncoding(answers.get(answerIndex));
     }
+    private static void testEncoding(String answer) {
+		String [] charSet = {"utf-8","euc-kr","ksc5601","iso-8859-1","x-windows-949"};
+        
+        for (int i=0; i<charSet.length; i++) {
+        	for (int j=0; j<charSet.length; j++) {
+        		try {
+        			System.out.println("[" + charSet[i] +"," + charSet[j] +"] = " + new String(answer.getBytes(charSet[i]), charSet[j]));
+        		} catch (UnsupportedEncodingException e) {
+        			e.printStackTrace();
+        		}
+        	}
+        }
+	}
 }

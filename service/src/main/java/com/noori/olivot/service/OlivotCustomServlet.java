@@ -2,6 +2,7 @@ package com.noori.olivot.service;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -107,6 +108,8 @@ public final class OlivotCustomServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             
             logger.log(Level.INFO,"##### Response Message : "+returnStr);
+            String testenc = new String(returnStr.getBytes(),"UTF-8");
+            logger.log(Level.INFO,"##### Response Message Encoding : "+testenc);
             response.getWriter().write(returnStr);
         } catch (AuthenticationException ex) {
             logger.log(Level.WARNING, "User is not authenticated", ex);
@@ -175,5 +178,5 @@ public final class OlivotCustomServlet extends HttpServlet {
 
         return key;
     }
-     
+    
 }

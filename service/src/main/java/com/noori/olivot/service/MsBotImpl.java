@@ -31,6 +31,7 @@ public final class MsBotImpl implements ChatBot {
             logger.info("##### TextVectorize bin");
             Map<Integer, String> answerMapping = AnswersMappingFactory.create(getResourceFile(context, "/WEB-INF/answers.csv"));
             logger.info("##### Answermapping csv");
+            //logger.info("##### answerMapping 6 : "+answerMapping.get(6));
 
             classifier = QuestionClassifierFactory.restore(
                     getResourceFile(context, "/WEB-INF/classifier.bin"),

@@ -5,12 +5,6 @@ import java.util.Map;
 
 import org.nd4j.linalg.api.ndarray.INDArray;
 
-import com.noori.olivot.AnswersMappingFactory;
-import com.noori.olivot.QuestionClassifier;
-import com.noori.olivot.QuestionClassifierFactory;
-import com.noori.olivot.QuestionVectorizerFactory;
-import com.noori.olivot.TextVectorizer;
-
 public class TrainingApplication {
     public static void main(String... args) throws Exception {
         Map<Integer, String> answers = AnswersMappingFactory.create(new File("data/answers.csv"));
@@ -29,11 +23,13 @@ public class TrainingApplication {
         System.out.println("##### classifier.bin save");
         
         //Test
-        INDArray output = vectorizer.transform("안녕하세요");
+        INDArray output = vectorizer.transform("마스크팩 찾아줘");
         int answerIndex = output.argMax(1).getInt(0,0);
         System.out.println("##### output : "+output);
         System.out.println("##### output answerIndex : "+answerIndex);
         System.out.println("##### answer text : "+answers.get(answerIndex));
         classifier.checkNetworkOutput(output);
     }
+
+	
 }

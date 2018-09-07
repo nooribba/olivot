@@ -12,17 +12,19 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern> %logger{15} - %message%n%xException{5}
-            </pattern>
+            <!-- <pattern> %logger{15} - %message%n%xException{5}
+            </pattern> -->
+            <pattern>[%date] - [%level] - from %logger in %thread
+                %message%n%xException</pattern>
         </encoder>
     </appender>
 
-    <logger name="org.apache.catalina.core" level="DEBUG" />
+    <logger name="org.apache.catalina.core" level="INFO" />
     <logger name="org.springframework" level="DEBUG" />
-    <logger name="org.deeplearning4j" level="INFO" />
+    <logger name="org.deeplearning4j" level="DEBUG" />
     <logger name="org.canova" level="INFO" />
     <logger name="org.datavec" level="INFO" />
-    <logger name="org.nd4j" level="INFO" />
+    <logger name="org.nd4j" level="DEBUG" />
     <logger name="opennlp.uima.util" level="OFF" />
     <logger name="org.apache.uima" level="OFF" />
     <logger name="org.cleartk" level="OFF" />

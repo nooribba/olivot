@@ -2,9 +2,12 @@ service/output/
 service/target/
 service/src/main/java/com/noori/olivot/service/Test*
 training/logs/
+training/model/bk/
 shared/logs/
 docs/
-data/
+data/bk/
+data/ver1/
+data/ver2/
 target/
 user_data/
 models_full/
