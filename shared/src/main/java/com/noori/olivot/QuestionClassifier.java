@@ -99,7 +99,7 @@ public final class QuestionClassifier {
      * @return The highest ranking answer
      */
     public String predict(String text) {
-    	logger.info("##### text:"+text);
+    	//logger.info("##### text:"+text);
         INDArray prediction = network.output(vectorizer.transform(text));
     	//INDArray prediction_test = vectorizer.transform(text);
         //logger.info("##### vectorizer.transform : "+vectorizer.transform(text).toString());

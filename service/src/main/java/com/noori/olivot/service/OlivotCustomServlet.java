@@ -108,8 +108,6 @@ public final class OlivotCustomServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             
             logger.log(Level.INFO,"##### Response Message : "+returnStr);
-            String testenc = new String(returnStr.getBytes(),"UTF-8");
-            logger.log(Level.INFO,"##### Response Message Encoding : "+testenc);
             response.getWriter().write(returnStr);
         } catch (AuthenticationException ex) {
             logger.log(Level.WARNING, "User is not authenticated", ex);

@@ -1,0 +1,31 @@
+{
+    "name": "Olivot",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "appId": "",
+            "id": "0ae3f540-96ec-11e8-874a-3f9388fafa6b",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "http://noori-app.appspot.com/message",
+            "name": "Olivot"
+        },
+        {
+            "appId": "",
+            "id": "b1b4d440-9933-11e8-824c-a7036e13b49b",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "http://localhost:9090/olivot/message",
+            "name": "Olivot_local_message"
+        },
+        {
+            "appId": "",
+            "id": "eaa40640-9933-11e8-aafd-17e1b6ab560b",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "http://localhost:9090/olivot/api/messages",
+            "name": "Olivot_local_botmessage"
+        }
+    ]
+}
