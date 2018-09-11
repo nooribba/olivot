@@ -68,7 +68,7 @@ public final class MsBotServlet extends HttpServlet {
     @Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
-        	logger.info("##### doPost request content length : "+request.getContentLength());
+        	logger.info("##### /api/messages doPost request content length : "+request.getContentLength());
         	request.setCharacterEncoding("UTF-8");
         	//((ServletResponse) request).setContentType("application/json;charset=UTF-8");
             request.setCharacterEncoding("UTF-8");

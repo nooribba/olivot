@@ -72,7 +72,7 @@ public final class OlivotCustomServlet extends HttpServlet {
     @Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
-        	logger.info("##### doPost request content length : "+request.getContentLength());
+        	logger.info("##### /custom doPost request content length : "+request.getContentLength());
         	request.setCharacterEncoding("UTF-8");
             String authorizationHeader = request.getHeader("Authorization");
             Activity activity = deserializeActivity(request);
