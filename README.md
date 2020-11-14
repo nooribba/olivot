@@ -17,11 +17,11 @@
     Local) Application Add to Server > Start Server
     
 
-### 카카오톡 플러스친구 적용 중
+### 카카오톡 플러스친구 적용
 
     https://center-pf.kakao.com/_rNxbtC
        
-### 올리브영 온라인몰 내 적용 계획
+### 올리브영 온라인몰 테스트 적용
 
     http://oliveyoung.co.kr
 
