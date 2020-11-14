@@ -39,7 +39,11 @@
     - 어구 추출(Phrase Extraction)
        : 한국어 처리하는 예시입니다 -> 한국어,처리,예시,처리하는 예시
 
-### 머신 러닝
+### 머신 러닝 / API
   
+    - FAQ 학습 / 문의 답변
+    - 최저가 검색 및 쿠폰 추천 발급
+    
     deeplearning4j
     https://deeplearning4j.org/
+    네이버 검색 API
