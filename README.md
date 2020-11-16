@@ -41,9 +41,11 @@
 
 ### 머신 러닝 / API
   
-    - FAQ 학습 / 문의 답변
-    - 최저가 검색 및 쿠폰 추천 발급
-    
     deeplearning4j
     https://deeplearning4j.org/
     네이버 검색 API
+
+
+![olivot_1](https://user-images.githubusercontent.com/40586079/99204093-e8bc6c00-27f7-11eb-9f66-87496687ea47.png)
+![olivot_2](https://user-images.githubusercontent.com/40586079/99204090-e65a1200-27f7-11eb-9d5d-4b7a43957ffc.png)
+![olivot_3](https://user-images.githubusercontent.com/40586079/99204092-e8bc6c00-27f7-11eb-86e3-75e363d48bcb.png)
